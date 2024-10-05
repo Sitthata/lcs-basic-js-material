@@ -46,6 +46,10 @@ function randomOperation() {
  * @throws {Error}
  */
 function findResource(resourceId) {
+    const resource = [
+        { id: "1", name: "Resource 1" },
+        { id: "2", name: "Resource 2" },
+    ]
     // TODO: Implement resource finding and handle not found case
 }
 
