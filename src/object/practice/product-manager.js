@@ -4,15 +4,6 @@ export default class ProductManager {
   }
 
   addProduct(product) {
-    /* 
-    {
-    id: "p001",
-    name: "Laptop",
-    category: "Electronics",
-    price: 1500,
-    quantity: 10,
-    }
-    */
     const newProductKey = JSON.stringify(Object.keys(product));
     const validKey = JSON.stringify([
       "id",
@@ -39,10 +30,37 @@ export default class ProductManager {
   }
 
   updateProduct(id, newProduct) {
-    const product = getProduct(id);
+    const position = this.products.findIndex((product) => product.id === id)
+    const product = this.products.find((product) => product.id === id);
+    const updated = { ...product, ...newProduct}
+    const allProduct = { ...this.products, ...updated}
+    this.products[position] = updated
+    return this.products
   }
 
-  //   deleteProduct();
+  deleteProduct(id) {
+    if (typeof id != "string") {
+      return console.log("Please enter a valid ID");
+    }
+    const product = this.products.findIndex((product) => product.id === id)
+    const deleted = this.products.splice(product, 1)
+    return this.products.filter((product) => product != deleted)
+  };
+
+  clearProduct() {
+    this.products.length = 0
+    return this.products
+  }
+
+  averagePrice() {
+    const listOfPrice = this.products.map((product) => product.price)
+    const sum = listOfPrice.reduce((accumulator, currentValue) => accumulator + currentValue)
+    return sum / listOfPrice.length
+  }
+
+  filteringByCategory(category) {
+    
+  }
   // updateProduct(id, newProduct) => ("p001", { name: "Test", price: 10 })
   /* 
 - Create a Product - Add a new product to the inventory.

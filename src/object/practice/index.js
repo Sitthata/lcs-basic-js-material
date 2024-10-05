@@ -2,7 +2,7 @@ import ProductManager from "./product-manager";
 import productList from "./products.json";
 
 const main = () => {
-  test();
+  testProduct();
 };
 
 const test = () => {
@@ -20,14 +20,22 @@ const test = () => {
 };
 
 const testProduct = () => {
-  const productManager1 = new ProductManager();
-  const productManager2 = new ProductManager();
-  productList.forEach((product) => productManager1.addProduct(product));
+  const productManager = new ProductManager();
+  productList.forEach((product) => productManager.addProduct(product));
 
-  console.log(productManager1.products);
-  console.log(productManager2.products);
+  //console.log(productManager.products);
 
-  // console.log(productManager.products)
+  //const noNeed = productManager.deleteProduct("p001")
+  //console.log(noNeed);
+  
+  //productManager.clearProduct()
+  //console.log(productManager.products);
+
+  productManager.updateProduct("p002", {name: "Laptop"})
+  //console.log(productManager.products);
+  
+  console.log(productManager.averagePrice());
+  
 };
 
 main();
