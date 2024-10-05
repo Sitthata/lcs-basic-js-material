@@ -1,7 +1,7 @@
 {
   "name": "lcs-basic-js-material",
   "module": "index.ts",
-  "type": "module",
+  "type": "commonjs",
   "devDependencies": {
     "@types/bun": "latest"
   },

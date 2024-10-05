@@ -1,16 +1,33 @@
 import ProductManager from "./product-manager";
-import data from './products.json'
+import productList from "./products.json";
 
 const main = () => {
-    testProduct();
-}
+  test();
+};
 
+const test = () => {
+  const productManager = new ProductManager();
+  console.log(
+    productManager.addProduct({
+      id: "p005",
+      name: "Notebook",
+      category: "Stationery",
+      quantity: 200,
+      brah: "brah",
+    })
+  );
+  console.log(productManager.products);
+};
 
 const testProduct = () => {
-    const productManager = new ProductManager();
-    data.forEach((product) => productManager.addProduct(product));
+  const productManager1 = new ProductManager();
+  const productManager2 = new ProductManager();
+  productList.forEach((product) => productManager1.addProduct(product));
 
-    console.log(productManager.products)
-}
+  console.log(productManager1.products);
+  console.log(productManager2.products);
 
-main()
+  // console.log(productManager.products)
+};
+
+main();

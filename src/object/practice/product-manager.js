@@ -1,9 +1,50 @@
 export default class ProductManager {
-    constructor() {
-        this.products = [];
+  constructor() {
+    this.products = [];
+  }
+
+  addProduct(product) {
+    /* 
+    {
+    id: "p001",
+    name: "Laptop",
+    category: "Electronics",
+    price: 1500,
+    quantity: 10,
+    }
+    */
+    const newProductKey = JSON.stringify(Object.keys(product));
+    const validKey = JSON.stringify([
+      "id",
+      "name",
+      "category",
+      "price",
+      "quantity",
+    ]);
+    if (newProductKey !== validKey) {
+      console.log("Enter valid product details");
+      return;
+    }
+    return this.products.push(product);
+  }
+
+  getProduct(id) {
+    // Invalid
+    if (typeof id !== "string") {
+      console.log("Please enter a valid ID");
+      return;
     }
 
-    /* 
+    return this.products.find((product) => product.id === id);
+  }
+
+  updateProduct(id, newProduct) {
+    const product = getProduct(id);
+  }
+
+  //   deleteProduct();
+  // updateProduct(id, newProduct) => ("p001", { name: "Test", price: 10 })
+  /* 
 - Create a Product - Add a new product to the inventory.
 - Read (Get) Product - Retrieve details of a specific product by its `id`.
 - Update a Product - Update the details of an existing product.
