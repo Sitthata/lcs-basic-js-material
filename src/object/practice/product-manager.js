@@ -1,7 +1,5 @@
-import { product } from "../../exports/node-export";
-
 export default class ProductManager {
-  constructor() {
+    constructor() {
     this.products = [];
   }
   // updateProduct(id, newProduct) => ("p001", { name: "Test", price: 10 })
