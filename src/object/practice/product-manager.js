@@ -1,3 +1,5 @@
+import { product } from "../../exports/node-export";
+
 export default class ProductManager {
   constructor() {
     this.products = [];
@@ -58,8 +60,22 @@ export default class ProductManager {
     return sum / listOfPrice.length
   }
 
-  filteringByCategory(category) {
-    
+  filterProductsByCategory(category) {
+    return this.products.filter((product) => product.category === category)
+  }
+
+  sortedProductByPrice(order) {
+    if (order === "asc") {
+      return this.products.sort((a, b) => a.price - b.price)
+    } else if (order === "desc") {
+      return this.products.sort((a, b) => b.price - a.price)
+    } else {
+      return console.log("Please enter only 'asc' or 'desc'");
+    }
+  }
+
+  getLowInventoryProducts(threshold) {
+    return this.products.filter((product) => product.quantity < threshold)
   }
   // updateProduct(id, newProduct) => ("p001", { name: "Test", price: 10 })
   /* 

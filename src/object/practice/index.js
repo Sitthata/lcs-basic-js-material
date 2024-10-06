@@ -34,8 +34,10 @@ const testProduct = () => {
   productManager.updateProduct("p002", {name: "Laptop"})
   //console.log(productManager.products);
   
-  console.log(productManager.averagePrice());
-  
+  //console.log(productManager.averagePrice());
+  //console.log(productManager.filterProductsByCategory("Electronic"));
+  //console.log(productManager.sortedProductByPrice("descending"));
+  console.log(productManager.getLowInventoryProducts(100));
 };
 
 main();
