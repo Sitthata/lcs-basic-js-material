@@ -27,7 +27,7 @@ function mergeArrays() {
 function mergeObjects() {
   const obj1 = { a: 1, b: 2 };
   const obj2 = { b: 3, c: 4 };
-  const mergedObject = { ...obj1, ...obj2 };
+  const mergedObject = { ...obj2, ...obj1 };
   console.log("Merge Objects:", mergedObject);
   // Output: Merge Objects: { a: 1, b: 3, c: 4 }
 }
@@ -50,7 +50,7 @@ function spreadFunctionArguments() {
     return x + y + z;
   }
   const numbers = [1, 2, 3];
-  const total = sum(...numbers);
+  const total = sum(...numbers); // sum(1, 2, 3)
   console.log("Spread Function Arguments:", total);
   // Output: Spread Function Arguments: 6
 }
@@ -96,17 +96,21 @@ function restParametersVsSpreadOperator() {
   // Output: Spread Operator: [1, 2, 3, 4]
 
   // Rest Parameters
-  function collect(...args) {
-    return args;
+  function collect(x, y, ...args) {
+    return {
+      a: x,
+      b: y,
+      c: args,
+    };
   }
-  const collected = collect(1, 2, 3, 4);
+  const collected = collect(1, 2, 3, 4, 5, 6, 7, 8);
   console.log("Rest Parameters:", collected);
   // Output: Rest Parameters: [1, 2, 3, 4]
 }
 
 // Execute all functions to demonstrate
 function runAllExamples() {
-  updateObject();
+  restParametersVsSpreadOperator();
 }
 
 // Run all examples
