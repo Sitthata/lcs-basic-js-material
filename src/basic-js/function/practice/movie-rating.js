@@ -18,9 +18,13 @@ Output: average and category.
 
 Example:
 rateMovie([5, 4, 4, 5, 5]);
-// Output: average: "4.60", category: "Excellent" 
+// Output: { average: "4.60", category: "Excellent" }
 
 rateMovie([3, 3, 4, 2, 3]);
-// Output: average: "3.00", category: "Average"
+// Output: { average: "3.00", category: "Average" }
 
 */
+
+export function rateMovie(ratings) {
+    // Your code here
+}

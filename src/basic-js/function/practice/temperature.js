@@ -2,7 +2,7 @@
 
 /* 
 Create a function that takes 3 inputs:
-(temp, inputUnit, outputUnit)
+convertTemperature(temp, inputUnit, outputUnit)
 return the converted temperature format decimal 1.00
 
 Example output
@@ -17,3 +17,7 @@ K to C: C = K - 273.15
 C to F: F = (C * 9/5) + 32
 C to K: K = C + 273.15
 */
+
+export function convertTemperature() {
+    // your code here
+}
