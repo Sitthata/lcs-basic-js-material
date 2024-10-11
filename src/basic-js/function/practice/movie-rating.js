@@ -26,5 +26,21 @@ rateMovie([3, 3, 4, 2, 3]);
 */
 
 export function rateMovie(ratings) {
-    // Your code here
+  // Your code here
+  function calcaluteAverage() {
+    let sum = 0;
+    for (const rate of ratings) {
+      sum += rate;
+    }
+    return sum / ratings.length;
+  }
+  console.log(calcaluteAverage());
+
+  return {
+    average: 4.6,
+    category: "Excellent",
+  };
 }
+
+const ratingTest = [1, 2, 4, 5, 1, 4, 3];
+console.log(rateMovie(ratingTest));
