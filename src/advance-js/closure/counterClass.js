@@ -23,5 +23,6 @@ counter.increment();
 counter.increment();
 counter.increment();
 
+
 console.log(counter.getCount());
 
