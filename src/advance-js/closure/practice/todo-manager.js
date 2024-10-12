@@ -9,25 +9,45 @@ export default function createTodoManager() {
       throw new Error("Task must be a non-empty string.");
     }
     const idOfThisLength = todos.length + 1;
-    return todos.push({ id: idOfThisLength, title: task, complete: false });
+    const newTodo = {id: idOfThisLength, title: task , completed: false }
+    todos.push(newTodo)
+    return newTodo
   }
 
   /**
    * Removes a todo from the list by its id.
    * @param {number} id - The unique identifier of the todo to remove.
    */
-  // function removeTodo() {
+  function removeTodo(id) {
+    const idOfTodo = todos.find(task => task.id === id)
+    if (!todos.includes(idOfTodo)) {
+      throw new Error(`Todo with id ${id} not found.`)
+    }
+    const allTodos = todos.filter(task => task.id !== id)
+    return allTodos
+  }
   
-
   /**
    * Marks a todo as completed by its id.
    * @param {number} id - The unique identifier of the todo to mark as completed.
    */
+  function completeTodo(id) {
+    const todoToComplete = todos.find(task => task.id === id)
+    if (!todoToComplete) {
+      throw new Error(`Todo with id ${id} not found.`)
+    }
+    todoToComplete.completed === true
+    return todoToComplete
+  }
 
   /**
    * Lists all todos, optionally filtering by completion status.
    * @param {boolean} [completed] - If provided, filters todos by their completion status.
    */
+  function listTodos(boolean) {
+    const allTodos = todos.filter(task => task.completed === boolean)
+    return allTodos
+  }
 
   /**
    * Clears all completed todos from the list.
@@ -45,8 +65,12 @@ export default function createTodoManager() {
    * Returns the count of completed todos.
    * @returns {number} The number of completed todos.
    */
+  function countCompleted() {
+    const completedTodos = todos.filter(task => task.completed === true)
+    return completedTodos.length
+  }
 
-  return { addTodo, countTodos };
+  return { addTodo, removeTodo, completeTodo, listTodos, countTodos, countCompleted };
 }
 
 const todos = [
