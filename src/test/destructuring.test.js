@@ -6,7 +6,7 @@ import {
     getSecondTheme,
     getSecondPostTitle,
     getFormattedProfile
-} from '../advance-js/practice/destructuring-exercise'
+} from '../advance-js/destructuring/practice/destructuring-exercise'
 
 describe('Destructuring Exercise Tests', () => {
     it('getUserName should return the correct first and last name', () => {
