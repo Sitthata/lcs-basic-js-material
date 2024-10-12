@@ -1,4 +1,5 @@
 export default function createTodoManager() {
+    let todos = []
     /**
    * Adds a new todo to the list.
    * @param {string} task - The task description.
@@ -32,6 +33,8 @@ export default function createTodoManager() {
    * Returns the count of completed todos.
    * @returns {number} The number of completed todos.
    */
+
+    return {}
 }
 
 const todos = [
