@@ -34,8 +34,10 @@ export default function createTodoManager() {
    */
 }
 
-const todo = {
-    id: 1,
-    title: "Buy milk",
-    completed: false
-}
+const todos = [
+    { id: 1, title: "Buy milk", completed: false },
+    { id: 2, title: "Buy bread", completed: true },
+    { id: 3, title: "Buy egg", completed: false },
+    { id: 4, title: "Buy coffee", completed: false },
+    { id: 5, title: "Buy tea", completed: false },
+]
