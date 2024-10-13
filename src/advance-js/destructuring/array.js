@@ -7,6 +7,11 @@ const colors = ["Red", "Green", "Blue", "Yellow"];
 // Skip the first and third elements
 const [, secondColor, , fourthColor] = colors;
 
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const [first, ...rest] = numbers;
+
+// console.log(rest)
+
 function extractRGB(color) {
   const colorDatabase = {
     red: [255, 0, 0],

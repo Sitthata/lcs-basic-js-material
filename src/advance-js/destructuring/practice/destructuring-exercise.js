@@ -55,8 +55,6 @@ const userProfile = {
 function getUserName() {
     // Your code here
     // Example:
-    // const { personalInfo: { name: { first, last } } } = userProfile;
-    // return { first, last };
 }
 
 /**
