@@ -9,9 +9,9 @@ export default function createTodoManager() {
       throw new Error("Task must be a non-empty string.");
     }
     const idOfThisLength = todos.length + 1;
-    const newTodo = {id: idOfThisLength, title: task , completed: false }
-    todos.push(newTodo)
-    return newTodo
+    const newTodo = { id: idOfThisLength, title: task, completed: false };
+    todos.push(newTodo);
+    return newTodo;
   }
 
   /**
@@ -19,28 +19,29 @@ export default function createTodoManager() {
    * @param {number} id - The unique identifier of the todo to remove.
    */
   function removeTodo(id) {
-    const idOfTodo = todos.find(task => task.id === id)
-    if (!todos.includes(idOfTodo)) {
-      throw new Error(`Todo with id ${id} not found.`)
+    const todoToRemove = todos.find((task) => task.id === id);
+    if (!todos.includes(todoToRemove)) {
+      throw new Error(`Todo with id ${id} not found.`);
     }
 
     // todos.forEach((task, index) => {if (task === idOfTodo) { todos.splice(index, 1)}})
     // return todos
-    const allTodos = todos.filter(task => task.id !== id)
-    return allTodos
+    const allTodos = todos.filter((task) => task.id !== id);
+    todos = allTodos
+    return todoToRemove;
   }
-  
+
   /**
    * Marks a todo as completed by its id.
    * @param {number} id - The unique identifier of the todo to mark as completed.
    */
   function completeTodo(id) {
-    const todoToComplete = todos.find(task => task.id === id)
+    const todoToComplete = todos.find((task) => task.id === id);
     if (!todoToComplete) {
-      throw new Error(`Todo with id ${id} not found.`)
+      throw new Error(`Todo with id ${id} not found.`);
     }
-    todoToComplete.completed = true
-    return todoToComplete
+    todoToComplete.completed = true;
+    return todoToComplete;
   }
 
   /**
@@ -49,10 +50,10 @@ export default function createTodoManager() {
    */
   function listTodos(boolean) {
     if (boolean === undefined) {
-        return todos
+      return todos;
     }
-    const allTodos = todos.filter(task => task.completed === boolean)
-    return allTodos
+    const allTodos = todos.filter((task) => task.completed === boolean);
+    return allTodos;
   }
 
   /**
@@ -72,11 +73,18 @@ export default function createTodoManager() {
    * @returns {number} The number of completed todos.
    */
   function countCompleted() {
-    const completedTodos = todos.filter(task => task.completed === true)
-    return completedTodos.length
+    const completedTodos = todos.filter((task) => task.completed);
+    return completedTodos.length;
   }
 
-  return { addTodo, removeTodo, completeTodo, listTodos, countTodos, countCompleted };
+  return {
+    addTodo,
+    removeTodo,
+    completeTodo,
+    listTodos,
+    countTodos,
+    countCompleted,
+  };
 }
 
 const todos = [
