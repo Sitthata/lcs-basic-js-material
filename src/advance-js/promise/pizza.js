@@ -5,7 +5,7 @@ const pizzaPromise = new Promise((resolve, reject) => {
     toppings: ["cheese", "mushroom", "onion"],
   };
 
-  if (random > 0.1) {
+  if (random > 0.9) {
     resolve(pizza);
   } else {
     reject(new Error("No pizza found"));
@@ -20,13 +20,13 @@ pizzaPromise
     console.error(error);
   });
 
-async function getPizza() {
-  try {
-    const pizza = await pizzaPromise;
-    console.log(pizza);
-  } catch (error) {
-    console.error(error);
-  }
-}
+// async function getPizza() {
+//   try {
+//     const pizza = await pizzaPromise;
+//     console.log(pizza);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 getPizza();

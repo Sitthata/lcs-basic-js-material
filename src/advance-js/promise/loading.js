@@ -5,8 +5,8 @@ const getUser = new Promise((resolve, reject) => {
     { name: "Jack Doe", age: 27 },
   ];
   setTimeout(() => {
-    resolve(users);
-    // reject("Failed to fetch users");
+    // resolve(users);
+    reject("Failed to fetch users");
   }, 2000);
 });
 
@@ -20,9 +20,10 @@ const getUser = new Promise((resolve, reject) => {
 
 let localUsers = [];
 
-async function fetchUser() {
+// Bad Code
+function fetchUser() {
   try {
-    const userData = await getUser;
+    const userData = getUser;
     return userData;
   } catch (error) {
     console.error(error);
@@ -30,11 +31,11 @@ async function fetchUser() {
 }
 
 // Aysnc Await
-function demonstrate() {
+async function demonstrate() {
   console.log("Before: ", localUsers);
   console.log("loading users...");
 
-  localUsers = fetchUser();
+  localUsers = await fetchUser();
 
   console.log("After: ", localUsers);
   console.log("Finished loading users...");

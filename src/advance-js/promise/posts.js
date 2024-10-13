@@ -14,9 +14,9 @@ async function main() {
   // For demonstration ONLY
   async function getPosts() {
     try {
-      const response = await fetch(`${BASE_URL}/posts`);
+      const response = await fetch(`${BASE_URL}`);
 
-      await delay(2000);
+      // await delay(2000);
 
       return response.json();
     } catch (error) {
@@ -27,6 +27,7 @@ async function main() {
   
   console.log("LOADING....");
   localPosts = await getPosts();
+  // console.log(JSON.stringify(localPosts));
   console.log(localPosts);
 }
 
