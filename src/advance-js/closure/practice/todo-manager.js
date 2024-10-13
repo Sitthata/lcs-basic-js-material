@@ -23,6 +23,9 @@ export default function createTodoManager() {
     if (!todos.includes(idOfTodo)) {
       throw new Error(`Todo with id ${id} not found.`)
     }
+
+    // todos.forEach((task, index) => {if (task === idOfTodo) { todos.splice(index, 1)}})
+    // return todos
     const allTodos = todos.filter(task => task.id !== id)
     return allTodos
   }
@@ -36,7 +39,7 @@ export default function createTodoManager() {
     if (!todoToComplete) {
       throw new Error(`Todo with id ${id} not found.`)
     }
-    todoToComplete.completed === true
+    todoToComplete.completed = true
     return todoToComplete
   }
 
@@ -45,6 +48,9 @@ export default function createTodoManager() {
    * @param {boolean} [completed] - If provided, filters todos by their completion status.
    */
   function listTodos(boolean) {
+    if (boolean === undefined) {
+        return todos
+    }
     const allTodos = todos.filter(task => task.completed === boolean)
     return allTodos
   }
