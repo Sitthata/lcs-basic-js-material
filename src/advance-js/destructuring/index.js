@@ -21,6 +21,7 @@ const calcualteGpax = (scores) => {
 }
 
 // const { name: studentName, scores } = student
+const gpax = calcualteGpax()
 
 
 console.log(studentName, scores);
