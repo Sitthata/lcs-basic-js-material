@@ -18,6 +18,25 @@ C to F: F = (C * 9/5) + 32
 C to K: K = C + 273.15
 */
 
-export function convertTemperature() {
-    // your code here
+export function convertTemperature(temp, inputValue, outputValue) {
+  // your code here
+  const validValue = ["C", "F", "K"];
+  if (!validValue.includes(inputValue) && !validValue.includes(outputValue))
+    return;
+  /* 
+    "CaR" => string.toLowerCase() => "car" === "car"
+    "32F" -> C -> K
+    */
+  function convertToCelcius() {
+    if (inputValue === "C") {
+      return temp;
+    } else if (inputValue === "F") {
+      return (temp * 9) / 5 + 32;
+    } else {
+      return temp + 273.15;
+    }
+  }
+  const tempCelcius = convertToCelcius()
 }
+
+// celcius
