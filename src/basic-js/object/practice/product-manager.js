@@ -4,7 +4,7 @@ export default class ProductManager {
   }
   // updateProduct(id, newProduct) => ("p001", { name: "Test", price: 10 })
   /* 
-- Create a Product - Add a new product to the inventory.
+- Create a Product - Add a new product to the inventory. (product) => new product
 - Read (Get) Product - Retrieve details of a specific product by its `id`.
 - Delete a Product - Remove a product from the inventory by its `id`.
 - Clear All Product - Clear all existing products on the list
