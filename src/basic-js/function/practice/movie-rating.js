@@ -26,5 +26,26 @@ rateMovie([3, 3, 4, 2, 3]);
 */
 
 export function rateMovie(ratings) {
-    // Your code here
+  // Your code here
+  const sum = ratings.reduce((acc, curr) => acc + curr, 0);
+  const averageResult = sum / ratings.length;
+  let categoryResult = "";
+  if (averageResult >= 4.5) {
+    categoryResult = "Excellent";
+  } else if (averageResult >= 3.5) {
+    categoryResult = "Good";
+  } else if (averageResult >= 2.5) {
+    categoryResult = "Average";
+  } else if (averageResult >= 1.5) {
+    categoryResult = "Poor";
+  } else {
+    categoryResult = "Terrible";
+  }
+
+  return {
+    average: averageResult.toFixed(2),
+    category: categoryResult,
+  };
 }
+
+console.log(rateMovie([5, 3, 3, 1, 5]));

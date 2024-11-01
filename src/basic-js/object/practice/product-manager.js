@@ -1,14 +1,14 @@
 export default class ProductManager {
-    constructor() {
+  constructor() {
     this.products = [];
   }
   // updateProduct(id, newProduct) => ("p001", { name: "Test", price: 10 })
   /* 
 - Create a Product - Add a new product to the inventory.
 - Read (Get) Product - Retrieve details of a specific product by its `id`.
-- Update a Product - Update the details of an existing product.
 - Delete a Product - Remove a product from the inventory by its `id`.
 - Clear All Product - Clear all existing products on the list
+- Update a Product - Update the details of an existing product.
 
 ---- Additions ----
 - Calculate Average Price
