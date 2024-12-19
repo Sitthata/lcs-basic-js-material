@@ -28,5 +28,6 @@ function extractRGB(color) {
   return colorDatabase[color.toLowerCase()] || [0, 0, 0];
 }
 
-const [red, green, blue] = extractRGB("Red");
-console.log(red, green, blue);
+const [red, green, blue] = extractRGB("green");
+
+console.log(red, green, blue)

@@ -16,12 +16,12 @@ function createCounter() {
   return { increment, decrement, getCount };
 }
 
-const counter = createCounter();
+const { increment, getCount } = createCounter();
 
-console.log(typeof counter.increment) 
+increment()
+increment()
+increment()
 
-counter.increment()
-counter.increment()
-counter.increment()
+console.log(getCount())
 
-console.log(counter.getCount())
+// console.log(typeof counter.increment) 

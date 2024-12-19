@@ -9,16 +9,12 @@ const student = {
   friends: ["Alice", "Bob", "Charlie"],
 };
 
-// const studentName = student.name
-// const studentScores = student.scores
-// const mathScore = studentScores.math
+const { scores } = student;
+const { english } = scores;
 
-const { name, scores, ...rest } = student;
+console.log(studentName)
 
 // simulate calculate gpa
 const calcualteGpax = (scores) => {
-  const totalScore = Object.values(scores).reduce((acc, curr) => acc + curr, 0);
-  return totalScore / Object.keys(scores).length;
-};
 
-console.log(calcualteGpax(scores));
+};

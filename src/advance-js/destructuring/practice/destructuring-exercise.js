@@ -53,8 +53,9 @@ const userProfile = {
  * Destructure the first and last name from userProfile and return them as an object.
  */
 function getUserName() {
-    // Your code here
-    // Example:
+    const { personalInfo } = userProfile
+    const { name } = personalInfo
+    return name
 }
 
 /**
@@ -62,7 +63,9 @@ function getUserName() {
  * Destructure the email and phone from userProfile and return them as an object.
  */
 function getContactInfo() {
-    // Your code here
+    const { personalInfo } = userProfile
+    const { contact } = personalInfo
+    return contact
 }
 
 /**
@@ -70,7 +73,11 @@ function getContactInfo() {
  * Destructure the home address from userProfile and return the city and zip as an object.
  */
 function getHomeAddress() {
-    // Your code here
+    const { personalInfo } = userProfile
+    const { addresses } = personalInfo
+    const [one, two] = addresses
+    const { city, zip } = one
+    return { city, zip }
 }
 
 /**
@@ -78,7 +85,10 @@ function getHomeAddress() {
  * Destructure the second theme from preferences and return it.
  */
 function getSecondTheme() {
-    // Your code here
+    const { preferences} = userProfile
+    const { themes} = preferences
+    const [,two] = themes
+    return two
 }
 
 /**
@@ -86,8 +96,14 @@ function getSecondTheme() {
  * Destructure the title of the second post and return it.
  */
 function getSecondPostTitle() {
-    // Your code here
+    const { posts } = userProfile
+    const [one,two] = posts
+    const {title} = two
+    console.log(title)
+    return title
 }
+
+getSecondPostTitle()
 
 /**
  * Bonus Exercise:
